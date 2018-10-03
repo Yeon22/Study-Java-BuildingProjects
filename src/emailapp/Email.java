@@ -8,7 +8,7 @@ public class Email {
 	private String password;
 	private String department;
 	private String email;
-	private int mailboxCapacity;
+	private int mailboxCapacity = 500;
 	private int defaultPasswordLength = 10;
 	private String alternateEmail;
 	private String companySuffix = "company.com";
@@ -53,17 +53,26 @@ public class Email {
 		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$";
 		char[] password = new char[length];
 		for (int i = 0; i < length; i++) {
-			// rand´Â 0 ~ (passwordSet.length() - 1)
+			// randëŠ” 0 ~ (passwordSet.length() - 1)
 			int rand = (int) (Math.random() * passwordSet.length());
-			// passwordSet.charAt(rand)´Â passwordSetÀÇ rand¹ø ÀÚ¸®ÀÇ ¹®ÀÚ
+			// passwordSet.charAt(rand)ëŠ” passwordSetì˜ randë²ˆ ìžë¦¬ ë¬¸ìž
 			password[i] = passwordSet.charAt(rand);
 		}
 		return new String(password);
 	}
 	
-	// Set the mailbox(¸ÞÀÏÇÔ) capacity(¿ë·®)
+	// Set the mailbox(ë©”ì¼í•¨) capacity(ìš©ëŸ‰)
+	public void setMailboxCapacity(int capacity) {
+		this.mailboxCapacity = capacity;
+	}
 	
-	// Set the alternate email(´ëÃ¼ ¸ÞÀÏ)
+	// Set the alternate email(ëŒ€ì²´ ì´ë©”ì¼)
+	public void setAlternateEmail(String altEmail) {
+		this.alternateEmail = altEmail;
+	}
 	
 	// Change the password
+	public void changePassword(String password) {
+		this.password = password;
+	}
 }
