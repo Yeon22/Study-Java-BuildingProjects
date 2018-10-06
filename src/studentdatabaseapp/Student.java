@@ -25,9 +25,6 @@ public class Student {
 		gradeYear = in.nextInt();
 
 		setStudentID();
-		
-		System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
-		
 	}
 	
 	// Generate an ID
@@ -37,7 +34,7 @@ public class Student {
 		studentID = gradeYear + "" + id;
 	}
 	
-	// Enroll in courses
+	// Enroll(등록하다) in courses
 	public void enroll() {
 		// Get inside a loop, user hits 0
 		do {
@@ -45,21 +42,20 @@ public class Student {
 			Scanner in = new Scanner(System.in);
 			String course = in.nextLine();
 			if(!course.equals("Q")) {
-				courses = courses + "\n" + course;
+				courses = courses + "\n " + course;
 				tuitionBalance = tuitionBalance + costOfCourse;
 			} else {
 				break;
 			}
 		} while(1 != 0);
-		System.out.println("ENROLLED IN: " + courses);
 	}
 	
-	// View balance
+	// View balance(잔금)
 	public void viewBalance() {
 		System.out.println("Your balance is: $" + tuitionBalance);
 	}
 	
-	// Pay Tuition
+	// Pay Tuition(수업료)
 	public void payTuition() {
 		viewBalance();
 		System.out.print("Enter your payment: $");
@@ -71,5 +67,11 @@ public class Student {
 	}
 	
 	// Show status
-	
+	public String toString() {
+		return "Name: " + firstName + " " + lastName + 
+				"\nGrade Level: " + gradeYear + 
+				"\nStudent ID: " + studentID + 
+				"\nCourses Enrolled: " + courses + 
+				"\nBalance $" + tuitionBalance;
+	}
 }
