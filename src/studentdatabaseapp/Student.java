@@ -21,7 +21,8 @@ public class Student {
 		System.out.print("Enter student last name: ");
 		lastName = in.nextLine();
 		
-		System.out.print("1 - Freshmen\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter student class level: ");
+		// Freshmen 신입생, Sophomore 2학년생
+		System.out.print("1 - Freshmen\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter student class level: ");
 		gradeYear = in.nextInt();
 
 		setStudentID();
