@@ -21,11 +21,19 @@ public class BankAccountApp {
 		// Read a CSV file then create new accounts based on that data
 		List<String[]> newAccountHolder = utilities.CSV.read(file);
 		for (String[] accountHolder : newAccountHolder) {
-			System.out.println("NEW ACCOUNT");
-			System.out.println(accountHolder[0]);
-			System.out.println(accountHolder[1]);
-			System.out.println(accountHolder[2]);
-			System.out.println(accountHolder[3]);
+			String name = accountHolder[0];
+			String sSN = accountHolder[1];
+			String accountType = accountHolder[2];
+			double initDeosit = Double.parseDouble(accountHolder[3]);
+//			System.out.println(name + " " + sSN + " " + accountType + " $" + initDeosit);
+			
+			if (accountType.equals("Savings")) {
+				System.out.println("OPEN A SAVINGS ACCOUNT");
+			} else if (accountType.equals("Checking")) {
+				System.out.println("OPEN A CHECKING ACCOUNT");
+			} else {
+				System.out.println("ERROR READING ACCOUNT TYPE");
+			}
 		}
 	}
 
