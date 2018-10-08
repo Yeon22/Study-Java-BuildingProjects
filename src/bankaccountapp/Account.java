@@ -26,6 +26,7 @@ public abstract class Account implements IBaseRate {
 	private String setAccountNumber() {
 		String lastTwoOfSSN = sSN.substring(sSN.length() - 2, sSN.length());
 		int uniqueID = index;
+		// Math.pow(10, 3)은 10의 3승
 		int randomNumber = (int)(Math.random() * Math.pow(10, 3));
 		return lastTwoOfSSN + uniqueID + randomNumber;
 	}
