@@ -3,8 +3,8 @@ package bankaccountapp;
 public class Savings extends Account {
 	// List properties apecific to the Savings account
 	// Safety Deposit Box 안전 대여 금고
-	int safetyDepositBoxID;
-	int safetyDepositBoxKey;
+	private int safetyDepositBoxID;
+	private int safetyDepositBoxKey;
 	
 	// Constructor to initialize settings for the Savings properties
 	// savings account 보통예금(저축예금)
