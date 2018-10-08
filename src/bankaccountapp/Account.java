@@ -33,7 +33,32 @@ public abstract class Account implements IBaseRate {
 		return lastTwoOfSSN + uniqueID + randomNumber;
 	}
 	
-	// List common methods
+	// List common(공통의) methods - transaction(거래, 매매)
+	// deposit 예금하다
+	public void deposit(double amount) {
+		balance = balance + amount;
+		System.out.println("Depositing $" + amount);
+		printBalance();
+	}
+	
+	// withdraw 빼내다
+	public void withdraw(double amount) {
+		balance = balance - amount;
+		System.out.println("Withdrawing $" + amount);
+		printBalance();
+	}
+	
+	// transfer 이체하다
+	public void transfer(String toWhere, double amount) {
+		balance = balance - amount;
+		System.out.println("Transfering $" + amount + " to " + toWhere);
+		printBalance();
+	}
+	
+	public void printBalance() {
+		System.out.println("Your balance is now: $" + balance);
+	}
+	
 	public void showInfo() {
 		System.out.println(
 				"NAME: " + name + 
