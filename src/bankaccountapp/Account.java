@@ -33,6 +33,14 @@ public abstract class Account implements IBaseRate {
 		return lastTwoOfSSN + uniqueID + randomNumber;
 	}
 	
+	public void compound() {
+		// Accrued Interest 미수(미불) 이자
+		double accruedInterest = balance * (rate / 100);
+		balance = balance + accruedInterest;
+		System.out.println("Accrued Interest: $" + accruedInterest);
+		printBalance();
+	}
+	
 	// List common(공통의) methods - transaction(거래, 매매)
 	// deposit 예금하다
 	public void deposit(double amount) {
