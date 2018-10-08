@@ -2,6 +2,7 @@ package bankaccountapp;
 
 public class Checking extends Account {
 	// List properties apecific to a Checking account
+	// Debit Card 직불(현금)카드
 	int debitCardNumber;
 	int debitCardPIN;
 	
